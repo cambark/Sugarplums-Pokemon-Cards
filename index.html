@@ -531,16 +531,13 @@
             <img src="${imageUrl}" alt="${cardName}" loading="lazy">
             <h3>${cardName}</h3>
             <p>${setName} ${cardNum}</p>
-            <div class="badges-container">
-              ${isHolo ? '<span class="badge badge-holo">✨ Holo</span>' : ''}
-            </div>
             <div class="card-actions">
               <div class="action-row">
                 <button class="btn" onclick="addToCollection('${cardId}', '${escapeQuotes(cardName)}', '${imageUrl}', '${escapeQuotes(setName)}', this)">
                   ${isOwned ? 'Add (' + isOwned.qty + ')' : '+ Add'}
                 </button>
                 <button class="btn btn-holo ${isHolo ? 'is-active' : ''}" onclick="toggleHoloInBrowse('${cardId}', '${escapeQuotes(cardName)}', '${imageUrl}', '${escapeQuotes(setName)}', this)">
-                  ${isHolo ? '✨ Holo' : '⭐ Holo'}
+                  ${isHolo ? '✨ Holo' : '+ Holo'}
                 </button>
               </div>
               <button class="btn btn-wishlist" onclick="toggleWishlist('${cardId}', '${escapeQuotes(cardName)}', '${imageUrl}', '${escapeQuotes(setName)}', this)">
@@ -591,7 +588,7 @@
       } else {
         cardContainer.classList.remove('holo-card');
         buttonEl.classList.remove('is-active');
-        buttonEl.textContent = '⭐ Holo';
+        buttonEl.textContent = '+ Holo';
         badgesContainer.innerHTML = '';
       }
 
