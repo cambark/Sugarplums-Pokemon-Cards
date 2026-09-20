@@ -111,10 +111,10 @@
       background-color: var(--pink-primary);
       color: var(--pink-dark);
       border: 2px solid var(--pink-accent);
-      padding: 10px 20px;
+      padding: 10px 14px;
       border-radius: 20px;
       font-weight: 600;
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       cursor: pointer;
       transition: all 0.2s ease;
       box-shadow: 0 3px 6px rgba(255, 105, 180, 0.2);
@@ -130,27 +130,37 @@
       background-color: #ffe3ec; 
       color: var(--pink-dark); 
       border-color: var(--pink-primary);
+      width: 100%;
     }
 
     .btn-remove { 
       background-color: var(--wrong-pink); 
       color: #721c24;
       border-color: #ff8fa3;
+      width: 100%;
     }
 
-    .btn-sync { 
-      background-color: var(--correct-green); 
-      color: #2d5a43; 
-      border-color: #8ce0c2;
+    .btn-holo {
+      background-color: #e8dff5;
+      color: #6a4c93;
+      border-color: #b8c0ff;
+    }
+
+    .btn-holo.is-active {
+      background-color: #9381ff;
+      color: #ffffff;
+      border-color: #7058f8;
+      box-shadow: 0 0 10px rgba(147, 129, 255, 0.6);
     }
 
     .card-grid { 
       display: grid; 
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); 
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); 
       gap: 1.5rem; 
     }
 
     .card-item { 
+      position: relative;
       background: var(--card-bg); 
       border-radius: var(--border-radius); 
       padding: 1.2rem; 
@@ -159,16 +169,50 @@
       flex-direction: column; 
       align-items: center; 
       text-align: center; 
-      border: 2px solid var(--pink-primary);
-      transition: transform 0.25s, box-shadow 0.25s; 
+      border: 3px solid var(--pink-primary);
+      transition: background 0.3s, box-shadow 0.3s, border-color 0.3s;
+      overflow: hidden;
+    }
+
+    .card-item.holo-card {
+      border-color: #a855f7;
+      background: linear-gradient(135deg, #ffffff 0%, #fff0f5 40%, #e6e6fa 70%, #ffffff 100%);
+      box-shadow: 0 0 15px rgba(255, 105, 180, 0.4), 0 0 25px rgba(184, 192, 255, 0.5);
+    }
+
+    .card-item.holo-card::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(
+        115deg,
+        transparent 20%,
+        rgba(255, 182, 193, 0.25) 30%,
+        rgba(255, 255, 255, 0.6) 45%,
+        rgba(184, 192, 255, 0.25) 60%,
+        transparent 80%
+      );
+      pointer-events: none;
+      transform: rotate(25deg);
+      opacity: 0.85;
     }
 
     .card-item:hover { 
-      transform: translateY(-4px); 
-      box-shadow: 0 8px 20px rgba(255, 105, 180, 0.3); 
+      transform: translateY(-5px); 
+      box-shadow: 0 10px 22px rgba(255, 105, 180, 0.4); 
+    }
+
+    .card-item.holo-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 20px rgba(255, 105, 180, 0.6), 0 0 35px rgba(184, 192, 255, 0.7);
     }
 
     .card-item img { 
+      position: relative;
+      z-index: 1;
       width: 100%; 
       max-width: 160px; 
       height: auto; 
@@ -178,19 +222,53 @@
     }
 
     .card-item h3 { 
+      position: relative;
+      z-index: 1;
       font-size: 1.15rem; 
       margin-bottom: 0.25rem; 
       color: var(--pink-dark);
     }
 
     .card-item p { 
+      position: relative;
+      z-index: 1;
       font-size: 0.85rem; 
       color: var(--text-color); 
       margin-bottom: 0.85rem; 
       opacity: 0.85;
     }
 
-    .card-actions { display: flex; flex-direction: column; gap: 0.5rem; width: 100%; margin-top: auto; }
+    .card-actions { 
+      position: relative;
+      z-index: 1;
+      display: flex; 
+      flex-direction: column; 
+      gap: 0.5rem; 
+      width: 100%; 
+      margin-top: auto; 
+    }
+
+    .action-row {
+      display: flex;
+      gap: 0.5rem;
+      width: 100%;
+    }
+
+    .action-row .btn {
+      flex: 1;
+    }
+
+    .badges-container {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      gap: 0.4rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 0.5rem;
+      min-height: 28px;
+      align-items: center;
+    }
 
     .badge { 
       background: var(--bg-color); 
@@ -201,7 +279,20 @@
       font-size: 0.85rem; 
       font-weight: 600; 
       display: inline-block; 
-      margin-bottom: 0.5rem; 
+    }
+
+    .badge-holo {
+      background: linear-gradient(135deg, #f0e6ff 0%, #d8b4fe 100%);
+      color: #4c1d95;
+      border: 1px solid #a855f7;
+      font-weight: 700;
+      box-shadow: 0 2px 6px rgba(168, 85, 247, 0.4);
+      animation: holoPulse 2s infinite alternate;
+    }
+
+    @keyframes holoPulse {
+      0% { box-shadow: 0 0 4px rgba(168, 85, 247, 0.4); }
+      100% { box-shadow: 0 0 12px rgba(168, 85, 247, 0.8); }
     }
 
     .status-msg { 
@@ -229,13 +320,6 @@
 
     .stat-box { font-weight: 600; color: var(--text-color); }
     .stat-box span { color: var(--pink-dark); }
-
-    .sync-actions { display: flex; gap: 0.5rem; flex-wrap: wrap; }
-
-    @keyframes popIn {
-      0% { transform: scale(0.9); opacity: 0; }
-      100% { transform: scale(1); opacity: 1; }
-    }
   </style>
 </head>
 <body>
@@ -257,11 +341,6 @@
         &nbsp;|&nbsp;
         <span class="stat-box">Wishlist Items: <span id="wishlistCount">0</span></span>
       </div>
-      <!--<div class="sync-actions">
-        <button class="btn btn-sync" onclick="exportData()">Export</button>
-        <input type="file" id="importFile" accept=".json" style="display:none" onchange="importData(event)">
-        <button class="btn btn-sync" onclick="document.getElementById('importFile').click()">Import</button>
-      </div>-->
     </div>
 
     <section id="browse" class="tab-content active">
@@ -390,7 +469,7 @@
     function globalSearch() {
       const query = document.getElementById('searchInput').value.trim().toLowerCase();
       const browseGrid = document.getElementById('browseGrid');
-      const browseStatus = document.getElementById('browseStatus');
+      browseStatus = document.getElementById('browseStatus');
 
       if (!query) return;
 
@@ -441,20 +520,29 @@
         const cardName = card.name || 'Unnamed Card';
         const isOwned = collection[cardId];
         const isWished = wishlist[cardId];
+        const isHolo = isOwned ? collection[cardId].isHolo : false;
         const imageUrl = card.images?.small || 'https://via.placeholder.com/180x250?text=No+Image';
         const setId = card.id.split('-')[0];
         const setName = setsMap[setId] || 'Pokémon TCG';
         const cardNum = card.number ? `#${card.number}` : '';
 
         return `
-          <div class="card-item">
+          <div class="card-item ${isHolo ? 'holo-card' : ''}">
             <img src="${imageUrl}" alt="${cardName}" loading="lazy">
             <h3>${cardName}</h3>
             <p>${setName} ${cardNum}</p>
+            <div class="badges-container">
+              ${isHolo ? '<span class="badge badge-holo">✨ Holo</span>' : ''}
+            </div>
             <div class="card-actions">
-              <button class="btn" onclick="addToCollection('${cardId}', '${escapeQuotes(cardName)}', '${imageUrl}', '${escapeQuotes(setName)}', this)">
-                ${isOwned ? 'Add Another (' + isOwned.qty + ')' : '+ Add to Collection'}
-              </button>
+              <div class="action-row">
+                <button class="btn" onclick="addToCollection('${cardId}', '${escapeQuotes(cardName)}', '${imageUrl}', '${escapeQuotes(setName)}', this)">
+                  ${isOwned ? 'Add (' + isOwned.qty + ')' : '+ Add'}
+                </button>
+                <button class="btn btn-holo ${isHolo ? 'is-active' : ''}" onclick="toggleHoloInBrowse('${cardId}', '${escapeQuotes(cardName)}', '${imageUrl}', '${escapeQuotes(setName)}', this)">
+                  ${isHolo ? '✨ Holo' : '⭐ Holo'}
+                </button>
+              </div>
               <button class="btn btn-wishlist" onclick="toggleWishlist('${cardId}', '${escapeQuotes(cardName)}', '${imageUrl}', '${escapeQuotes(setName)}', this)">
                 ${isWished ? '★ On Wishlist' : '☆ Add to Wishlist'}
               </button>
@@ -468,16 +556,56 @@
       return (str || '').replace(/'/g, "\\'").replace(/"/g, '&quot;');
     }
 
-    function addToCollection(id, name, image, setName, buttonEl) {
+    function addToCollection(id, name, image, setName, buttonEl, isHolo = false) {
       if (collection[id]) {
         collection[id].qty += 1;
+        if (isHolo) collection[id].isHolo = true;
       } else {
-        collection[id] = { id, name, image, setName, qty: 1 };
+        collection[id] = { id, name, image, setName, qty: 1, isHolo: isHolo };
       }
       saveData();
       
       if (buttonEl) {
-        buttonEl.textContent = `Add Another (${collection[id].qty})`;
+        buttonEl.textContent = `Add (${collection[id].qty})`;
+      }
+    }
+
+    function toggleHoloInBrowse(id, name, image, setName, buttonEl) {
+      if (!collection[id]) {
+        collection[id] = { id, name, image, setName, qty: 1, isHolo: true };
+      } else {
+        collection[id].isHolo = !collection[id].isHolo;
+      }
+      saveData();
+      
+      const cardContainer = buttonEl.closest('.card-item');
+      let badgesContainer = cardContainer.querySelector('.badges-container');
+      
+      if (collection[id].isHolo) {
+        cardContainer.classList.add('holo-card');
+        buttonEl.classList.add('is-active');
+        buttonEl.textContent = '✨ Holo';
+        if (!badgesContainer.querySelector('.badge-holo')) {
+          badgesContainer.innerHTML = '<span class="badge badge-holo">✨ Holo</span>';
+        }
+      } else {
+        cardContainer.classList.remove('holo-card');
+        buttonEl.classList.remove('is-active');
+        buttonEl.textContent = '⭐ Holo';
+        badgesContainer.innerHTML = '';
+      }
+
+      const addBtn = cardContainer.querySelector('.action-row .btn');
+      if (addBtn && collection[id]) {
+        addBtn.textContent = `Add (${collection[id].qty})`;
+      }
+    }
+
+    function toggleHolo(id) {
+      if (collection[id]) {
+        collection[id].isHolo = !collection[id].isHolo;
+        saveData();
+        renderCollection();
       }
     }
 
@@ -515,16 +643,22 @@
 
       status.style.display = 'none';
       grid.innerHTML = cards.map(card => `
-        <div class="card-item">
+        <div class="card-item ${card.isHolo ? 'holo-card' : ''}">
           <img src="${card.image}" alt="${card.name}">
           <h3>${card.name}</h3>
           <p>${card.setName}</p>
-          <span class="badge">Quantity: ${card.qty}</span>
+          <div class="badges-container">
+            <span class="badge">Quantity: ${card.qty}</span>
+            ${card.isHolo ? '<span class="badge badge-holo">✨ Holo</span>' : ''}
+          </div>
           <div class="card-actions">
             <div style="display:flex; gap:0.5rem; width:100%;">
               <button class="btn" style="flex:1" onclick="changeQuantity('${card.id}', 1)">+</button>
               <button class="btn" style="flex:1" onclick="changeQuantity('${card.id}', -1)">-</button>
             </div>
+            <button class="btn btn-holo ${card.isHolo ? 'is-active' : ''}" onclick="toggleHolo('${card.id}')">
+              ${card.isHolo ? '✨ Holo Card' : '⭐ Make Holo'}
+            </button>
             <button class="btn btn-remove" onclick="removeFromCollection('${card.id}', this)">Remove All</button>
           </div>
         </div>
@@ -552,10 +686,10 @@
       }
     }
 
-    function moveToCollection(id, buttonEl) {
+    function moveToCollection(id, buttonEl, isHolo = false) {
       const item = wishlist[id];
       if (item) {
-        addToCollection(item.id, item.name, item.image, item.setName);
+        addToCollection(item.id, item.name, item.image, item.setName, null, isHolo);
         delete wishlist[id];
         saveData();
         if (buttonEl) {
@@ -582,8 +716,11 @@
           <h3>${card.name}</h3>
           <p>${card.setName}</p>
           <div class="card-actions">
-            <button class="btn" onclick="moveToCollection('${card.id}', this)">Move to Collection</button>
-            <button class="btn btn-remove" onclick="removeFromWishlist('${card.id}',this)">Remove</button>
+            <div class="action-row">
+              <button class="btn" onclick="moveToCollection('${card.id}', this, false)">Add to Collection</button>
+              <button class="btn btn-holo" onclick="moveToCollection('${card.id}', this, true)">Add Holo</button>
+            </div>
+            <button class="btn btn-remove" onclick="removeFromWishlist('${card.id}', this)">Remove</button>
           </div>
         </div>
       `).join('');
@@ -595,43 +732,6 @@
 
       document.getElementById('ownedCount').textContent = ownedTotal;
       document.getElementById('wishlistCount').textContent = wishlistTotal;
-    }
-
-    function exportData() {
-      const data = { collection, wishlist };
-      const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
-      const a = document.createElement('a');
-      a.href = URL.createObjectURL(blob);
-      a.download = 'sugarplum-pokemon-database.json';
-      a.click();
-    }
-
-    function importData(event) {
-      const file = event.target.files[0];
-      if (!file) return;
-
-      const reader = new FileReader();
-      reader.onload = function(e) {
-        try {
-          const data = JSON.parse(e.target.result);
-          if (data.collection && data.wishlist) {
-            collection = data.collection;
-            wishlist = data.wishlist;
-            saveData();
-            
-            const activeTab = document.querySelector('.tab-content.active').id;
-            if (activeTab === 'collection') renderCollection();
-            if (activeTab === 'wishlist') renderWishlist();
-
-            alert('Woohoo! Loaded all of my loves cards :)');
-          } else {
-            alert('Something went wrong with the file structure! Call mookie to fix it!');
-          }
-        } catch (err) {
-          alert('Something went wrong with the file! Call mookie to fix it!');
-        }
-      };
-      reader.readAsText(file);
     }
 
     document.getElementById('searchInput').addEventListener('keypress', function (e) {
