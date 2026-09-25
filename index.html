@@ -7,6 +7,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
   <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-database-compat.js"></script>
+  <!-- Load local card dataset -->
+  <script src="pokemon_cards.js"></script>
   <style>
     :root {
       --bg-color: #fff0f5;
@@ -370,8 +372,6 @@
   </main>
 
   <script>
-    const RAW_BASE = 'https://raw.githubusercontent.com/PokemonTCG/pokemon-tcg-data/master';
-
     const firebaseConfig = {
       apiKey: "AIzaSyD8GSpg3wS5Qrx6uy5hXj38i7Mkkb21vls",
       authDomain: "sugarplum-s-pokemon-cards.firebaseapp.com",
@@ -422,54 +422,36 @@
       if (tabId === 'wishlist') renderWishlist();
     }
 
-    async function initializeApp() {
+    function initializeApp() {
       const browseStatus = document.getElementById('browseStatus');
       const setSelect = document.getElementById('setSelect');
 
       try {
-        const res = await fetch(`${RAW_BASE}/sets/en.json`);
-        const sets = await res.json();
+        const cardData = window.POKEMON_CARD_DATA || { sets: [], cards: [] };
+        const sets = cardData.sets || [];
+        globalIndex = cardData.cards || [];
 
         setSelect.innerHTML = '<option value="">-- Pick a set here my love --</option>';
-        sets.sort((a, b) => new Date(b.releaseDate) - new Date(a.releaseDate));
 
         sets.forEach(set => {
           setsMap[set.id] = set.name;
+          setsMap[set.name] = set.name; // map name as fallback
           const opt = document.createElement('option');
-          opt.value = set.id;
-          opt.textContent = `${set.name} (${set.series})`;
+          opt.value = set.name;
+          opt.textContent = set.name;
           setSelect.appendChild(opt);
         });
 
-        browseStatus.textContent = 'Finding all the cards for my baby';
-        buildGlobalIndex(sets);
+        browseStatus.textContent = `Loaded ${globalIndex.length.toLocaleString()} cards for my pretty girl to look at! Dang now I'm just thinking of how pretty my girlfriend is omg`;
       } catch (err) {
         browseStatus.innerHTML = `Something went wrong :(( please text or call mookie to fix this!`;
       }
     }
 
-    async function buildGlobalIndex(sets) {
-      const browseStatus = document.getElementById('browseStatus');
-      
-      const batchSize = 10;
-      for (let i = 0; i < sets.length; i += batchSize) {
-        const batch = sets.slice(i, i + batchSize);
-        await Promise.all(batch.map(async (set) => {
-          try {
-            const res = await fetch(`${RAW_BASE}/cards/en/${set.id}.json`);
-            const cards = await res.json();
-            globalIndex.push(...cards);
-          } catch (e) {}
-        }));
-      }
-
-      browseStatus.textContent = `Loaded ${globalIndex.length.toLocaleString()} cards for my pretty girl to look at! Dang now I'm just thinking of how pretty my girlfriend is omg`;
-    }
-
     function globalSearch() {
       const query = document.getElementById('searchInput').value.trim().toLowerCase();
       const browseGrid = document.getElementById('browseGrid');
-      browseStatus = document.getElementById('browseStatus');
+      const browseStatus = document.getElementById('browseStatus');
 
       if (!query) return;
 
@@ -491,26 +473,26 @@
       renderSearchResults(currentRenderedCards);
     }
 
-    async function fetchSetCards(setId) {
+    function fetchSetCards(setName) {
       const browseGrid = document.getElementById('browseGrid');
       const browseStatus = document.getElementById('browseStatus');
       document.getElementById('searchInput').value = '';
 
-      if (!setId) return;
+      if (!setName) return;
 
       browseGrid.innerHTML = '';
-      browseStatus.style.display = 'block';
-      browseStatus.textContent = `Getting my baby's cards from ${setsMap[setId]}...`;
 
-      try {
-        const res = await fetch(`${RAW_BASE}/cards/en/${setId}.json`);
-        currentRenderedCards = await res.json();
+      const matches = globalIndex.filter(card => card.set === setName);
 
-        browseStatus.style.display = 'none';
-        renderSearchResults(currentRenderedCards);
-      } catch (err) {
-        browseStatus.textContent = `Something went wrong with ${setId} :(( call mookie to fix it!`;
+      if (matches.length === 0) {
+        browseStatus.style.display = 'block';
+        browseStatus.textContent = `No cards found for ${setName}!`;
+        return;
       }
+
+      browseStatus.style.display = 'none';
+      currentRenderedCards = matches;
+      renderSearchResults(currentRenderedCards);
     }
 
     function renderSearchResults(cards) {
@@ -522,9 +504,19 @@
         const isWished = wishlist[cardId];
         const isHolo = isOwned ? collection[cardId].isHolo : false;
         const imageUrl = card.images?.small || 'https://via.placeholder.com/180x250?text=No+Image';
-        const setId = card.id.split('-')[0];
-        const setName = setsMap[setId] || 'Pokémon TCG';
+        const setName = card.set || 'Pokémon TCG';
         const cardNum = card.number ? `#${card.number}` : '';
+        
+        let cardType = '';
+        if (Array.isArray(card.types)) {
+          cardType = card.types.join(', ');
+        } else if (card.types) {
+          cardType = card.types;
+        } else if (card.type) {
+          cardType = Array.isArray(card.type) ? card.type.join(', ') : card.type;
+        } else if (card.supertype) {
+          cardType = card.supertype;
+        }
 
         return `
           <div class="card-item ${isHolo ? 'holo-card' : ''}">
@@ -533,14 +525,14 @@
             <p>${setName} ${cardNum}</p>
             <div class="card-actions">
               <div class="action-row">
-                <button class="btn" onclick="addToCollection('${cardId}', '${escapeQuotes(cardName)}', '${imageUrl}', '${escapeQuotes(setName)}', this)">
+                <button class="btn" onclick="addToCollection('${cardId}', '${escapeQuotes(cardName)}', '${imageUrl}', '${escapeQuotes(setName)}', '${escapeQuotes(cardType)}', this)">
                   ${isOwned ? 'Add (' + isOwned.qty + ')' : '+ Add'}
                 </button>
-                <button class="btn btn-holo ${isHolo ? 'is-active' : ''}" onclick="toggleHoloInBrowse('${cardId}', '${escapeQuotes(cardName)}', '${imageUrl}', '${escapeQuotes(setName)}', this)">
+                <button class="btn btn-holo ${isHolo ? 'is-active' : ''}" onclick="toggleHoloInBrowse('${cardId}', '${escapeQuotes(cardName)}', '${imageUrl}', '${escapeQuotes(setName)}', '${escapeQuotes(cardType)}', this)">
                   ${isHolo ? '✨ Holo' : '+ Holo'}
                 </button>
               </div>
-              <button class="btn btn-wishlist" onclick="toggleWishlist('${cardId}', '${escapeQuotes(cardName)}', '${imageUrl}', '${escapeQuotes(setName)}', this)">
+              <button class="btn btn-wishlist" onclick="toggleWishlist('${cardId}', '${escapeQuotes(cardName)}', '${imageUrl}', '${escapeQuotes(setName)}', '${escapeQuotes(cardType)}', this)">
                 ${isWished ? '★ On Wishlist' : '☆ Add to Wishlist'}
               </button>
             </div>
@@ -553,12 +545,13 @@
       return (str || '').replace(/'/g, "\\'").replace(/"/g, '&quot;');
     }
 
-    function addToCollection(id, name, image, setName, buttonEl, isHolo = false) {
+    function addToCollection(id, name, image, setName, type, buttonEl, isHolo = false) {
       if (collection[id]) {
         collection[id].qty += 1;
         if (isHolo) collection[id].isHolo = true;
+        if (type) collection[id].type = type;
       } else {
-        collection[id] = { id, name, image, setName, qty: 1, isHolo: isHolo };
+        collection[id] = { id, name, image, setName, type: type || '', qty: 1, isHolo: isHolo };
       }
       saveData();
       
@@ -567,11 +560,12 @@
       }
     }
 
-    function toggleHoloInBrowse(id, name, image, setName, buttonEl) {
+    function toggleHoloInBrowse(id, name, image, setName, type, buttonEl) {
       if (!collection[id]) {
-        collection[id] = { id, name, image, setName, qty: 1, isHolo: true };
+        collection[id] = { id, name, image, setName, type: type || '', qty: 1, isHolo: true };
       } else {
         collection[id].isHolo = !collection[id].isHolo;
+        if (type) collection[id].type = type;
       }
       saveData();
       
@@ -582,14 +576,14 @@
         cardContainer.classList.add('holo-card');
         buttonEl.classList.add('is-active');
         buttonEl.textContent = '✨ Holo';
-        if (!badgesContainer.querySelector('.badge-holo')) {
+        if (badgesContainer && !badgesContainer.querySelector('.badge-holo')) {
           badgesContainer.innerHTML = '<span class="badge badge-holo">✨ Holo</span>';
         }
       } else {
         cardContainer.classList.remove('holo-card');
         buttonEl.classList.remove('is-active');
         buttonEl.textContent = '+ Holo';
-        badgesContainer.innerHTML = '';
+        if (badgesContainer) badgesContainer.innerHTML = '';
       }
 
       const addBtn = cardContainer.querySelector('.action-row .btn');
@@ -662,12 +656,12 @@
       `).join('');
     }
 
-    function toggleWishlist(id, name, image, setName, buttonEl) {
+    function toggleWishlist(id, name, image, setName, type, buttonEl) {
       if (wishlist[id]) {
         delete wishlist[id];
         if (buttonEl) buttonEl.textContent = '☆ Add to Wishlist';
       } else {
-        wishlist[id] = { id, name, image, setName };
+        wishlist[id] = { id, name, image, setName, type: type || '' };
         if (buttonEl) buttonEl.textContent = '★ On Wishlist';
       }
       saveData();
@@ -686,7 +680,7 @@
     function moveToCollection(id, buttonEl, isHolo = false) {
       const item = wishlist[id];
       if (item) {
-        addToCollection(item.id, item.name, item.image, item.setName, null, isHolo);
+        addToCollection(item.id, item.name, item.image, item.setName, item.type, null, isHolo);
         delete wishlist[id];
         saveData();
         if (buttonEl) {
