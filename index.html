@@ -7,7 +7,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
   <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-database-compat.js"></script>
-  <!-- Load local card dataset -->
   <script src="pokemon_cards.js"></script>
   <style>
     :root {
@@ -140,6 +139,17 @@
       color: #721c24;
       border-color: #ff8fa3;
       width: 100%;
+    }
+
+    .btn-remove-inline {
+      background-color: var(--wrong-pink); 
+      color: #721c24;
+      border-color: #ff8fa3;
+    }
+
+    .btn-remove-inline:hover {
+      background-color: #ff8fa3;
+      color: #fff;
     }
 
     .btn-holo {
@@ -330,9 +340,9 @@
     <h1>💗Sugarplum's Pokemon Cards💗</h1>
     <p class="subtitle" style="color: var(--pink-accent); font-size: 1.1rem;">My baby's personal database!</p>
     <nav>
-      <button class="nav-btn active" onclick="switchTab('browse')">🔍 Find Cards</button>
-      <button class="nav-btn" onclick="switchTab('collection')">📖 Collection</button>
-      <button class="nav-btn" onclick="switchTab('wishlist')">⭐ Wishlist</button>
+      <button class="nav-btn active" onclick="switchTab('browse', event)">🔍 Find Cards</button>
+      <button class="nav-btn" onclick="switchTab('collection', event)">📖 Collection</button>
+      <button class="nav-btn" onclick="switchTab('wishlist', event)">⭐ Wishlist</button>
     </nav>
   </header>
 
@@ -347,7 +357,7 @@
 
     <section id="browse" class="tab-content active">
       <div class="search-bar-container">
-        <input type="text" id="searchInput" placeholder="Search across ALL sets (e.g., Charizard, Pikachu)...">
+        <input type="text" id="searchInput" placeholder="Search across all sets here my baby pie!">
         
         <select id="setSelect" onchange="fetchSetCards(this.value)">
           <option value="">-- Loading sets for my baby --</option>
@@ -361,11 +371,25 @@
     </section>
 
     <section id="collection" class="tab-content">
+      <div class="search-bar-container">
+        <input type="text" id="collectionSearchInput" placeholder="Search here for cards you have!" oninput="onCollectionSearchInput()">
+        <select id="collectionSetSelect" onchange="onCollectionSetSelect()">
+          <option value="">All sets for my baby!</option>
+        </select>
+      </div>
+
       <div id="collectionGrid" class="card-grid"></div>
       <div id="collectionStatus" class="status-msg" style="display:none;">You haven't added any cards yet my baby!</div>
     </section>
 
     <section id="wishlist" class="tab-content">
+      <div class="search-bar-container">
+        <input type="text" id="wishlistSearchInput" placeholder="Search here for cards you want!" oninput="onWishlistSearchInput()">
+        <select id="wishlistSetSelect" onchange="onWishlistSetSelect()">
+          <option value="">All sets for my baby!</option>
+        </select>
+      </div>
+
       <div id="wishlistGrid" class="card-grid"></div>
       <div id="wishlistStatus" class="status-msg" style="display:none;">You haven't wished for any cards yet my baby! Speaking of wishes I wish you were in my arms right now hehe</div>
     </section>
@@ -388,38 +412,121 @@
     let collection = {};
     let wishlist = {};
     let setsMap = {};
+    let setOrdering = [];
     let globalIndex = [];
     let currentRenderedCards = [];
-
-    db.ref('user_data').on('value', (snapshot) => {
-      const data = snapshot.val() || {};
-      collection = data.collection || {};
-      wishlist = data.wishlist || {};
-      
-      updateStats();
     
-      const activeTab = document.querySelector('.tab-content.active')?.id;
-      if (activeTab === 'collection') renderCollection();
-      if (activeTab === 'wishlist') renderWishlist();
+    db.ref('user_data/collection').on('child_added', (snapshot) => {
+      collection[snapshot.key] = snapshot.val();
+      updateStats();
+      populateFilterSets('collection');
+      if (document.getElementById('collection').classList.contains('active')) {
+        renderCollection();
+      }
     });
 
-    function saveData() {
-      db.ref('user_data').set({
-        collection: collection,
-        wishlist: wishlist
-      });
+    db.ref('user_data/collection').on('child_changed', (snapshot) => {
+      collection[snapshot.key] = snapshot.val();
       updateStats();
+      if (document.getElementById('collection').classList.contains('active')) {
+        renderCollection();
+      }
+    });
+
+    db.ref('user_data/collection').on('child_removed', (snapshot) => {
+      delete collection[snapshot.key];
+      updateStats();
+      populateFilterSets('collection');
+      if (document.getElementById('collection').classList.contains('active')) {
+        renderCollection();
+      }
+    });
+
+    db.ref('user_data/wishlist').on('child_added', (snapshot) => {
+      wishlist[snapshot.key] = snapshot.val();
+      updateStats();
+      populateFilterSets('wishlist');
+      if (document.getElementById('wishlist').classList.contains('active')) {
+        renderWishlist();
+      }
+    });
+
+    db.ref('user_data/wishlist').on('child_removed', (snapshot) => {
+      delete wishlist[snapshot.key];
+      updateStats();
+      populateFilterSets('wishlist');
+      if (document.getElementById('wishlist').classList.contains('active')) {
+        renderWishlist();
+      }
+    });
+
+    function populateFilterSets(type) {
+      const source = type === 'collection' ? collection : wishlist;
+      const selectEl = document.getElementById(type === 'collection' ? 'collectionSetSelect' : 'wishlistSetSelect');
+      
+      const currentSelected = selectEl.value;
+      const activeSets = new Set();
+      
+      Object.values(source).forEach(card => {
+        if (card.setName) activeSets.add(card.setName);
+      });
+
+      const orderedActiveSets = setOrdering.filter(setName => activeSets.has(setName));
+      
+      activeSets.forEach(setName => {
+        if (!orderedActiveSets.includes(setName)) {
+          orderedActiveSets.push(setName);
+        }
+      });
+
+      selectEl.innerHTML = '<option value="">All sets for my baby!</option>';
+      orderedActiveSets.forEach(setName => {
+        const opt = document.createElement('option');
+        opt.value = setName;
+        opt.textContent = setName;
+        selectEl.appendChild(opt);
+      });
+
+      selectEl.value = currentSelected;
     }
 
-    function switchTab(tabId) {
+    function onCollectionSearchInput() {
+      document.getElementById('collectionSetSelect').value = '';
+      renderCollection();
+    }
+
+    function onCollectionSetSelect() {
+      document.getElementById('collectionSearchInput').value = '';
+      renderCollection();
+    }
+
+    function onWishlistSearchInput() {
+      document.getElementById('wishlistSetSelect').value = '';
+      renderWishlist();
+    }
+
+    function onWishlistSetSelect() {
+      document.getElementById('wishlistSearchInput').value = '';
+      renderWishlist();
+    }
+
+    function switchTab(tabId, evt) {
       document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
       document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
 
       document.getElementById(tabId).classList.add('active');
-      event.target.classList.add('active');
+      if (evt && evt.target) {
+        evt.target.classList.add('active');
+      }
 
-      if (tabId === 'collection') renderCollection();
-      if (tabId === 'wishlist') renderWishlist();
+      if (tabId === 'collection') {
+        populateFilterSets('collection');
+        renderCollection();
+      }
+      if (tabId === 'wishlist') {
+        populateFilterSets('wishlist');
+        renderWishlist();
+      }
     }
 
     function initializeApp() {
@@ -433,14 +540,20 @@
 
         setSelect.innerHTML = '<option value="">-- Pick a set here my love --</option>';
 
+        setOrdering = [];
         sets.forEach(set => {
           setsMap[set.id] = set.name;
-          setsMap[set.name] = set.name; // map name as fallback
+          setsMap[set.name] = set.name;
+          setOrdering.push(set.name);
+
           const opt = document.createElement('option');
           opt.value = set.name;
           opt.textContent = set.name;
           setSelect.appendChild(opt);
         });
+
+        populateFilterSets('collection');
+        populateFilterSets('wishlist');
 
         browseStatus.textContent = `Loaded ${globalIndex.length.toLocaleString()} cards for my pretty girl to look at! Dang now I'm just thinking of how pretty my girlfriend is omg`;
       } catch (err) {
@@ -525,8 +638,8 @@
             <p>${setName} ${cardNum}</p>
             <div class="card-actions">
               <div class="action-row">
-                <button class="btn" onclick="addToCollection('${cardId}', '${escapeQuotes(cardName)}', '${imageUrl}', '${escapeQuotes(setName)}', '${escapeQuotes(cardType)}', this)">
-                  ${isOwned ? 'Add (' + isOwned.qty + ')' : '+ Add'}
+                <button class="btn ${isOwned ? 'btn-remove-inline' : ''}" onclick="toggleCollectionFromBrowse('${cardId}', '${escapeQuotes(cardName)}', '${imageUrl}', '${escapeQuotes(setName)}', '${escapeQuotes(cardType)}', this)">
+                  ${isOwned ? 'Remove' : '+ Add'}
                 </button>
                 <button class="btn btn-holo ${isHolo ? 'is-active' : ''}" onclick="toggleHoloInBrowse('${cardId}', '${escapeQuotes(cardName)}', '${imageUrl}', '${escapeQuotes(setName)}', '${escapeQuotes(cardType)}', this)">
                   ${isHolo ? '✨ Holo' : '+ Holo'}
@@ -545,90 +658,126 @@
       return (str || '').replace(/'/g, "\\'").replace(/"/g, '&quot;');
     }
 
-    function addToCollection(id, name, image, setName, type, buttonEl, isHolo = false) {
+    function toggleCollectionFromBrowse(id, name, image, setName, type, buttonEl) {
       if (collection[id]) {
-        collection[id].qty += 1;
-        if (isHolo) collection[id].isHolo = true;
-        if (type) collection[id].type = type;
+        db.ref(`user_data/collection/${id}`).remove();
+
+        if (buttonEl) {
+          buttonEl.textContent = '+ Add';
+          buttonEl.classList.remove('btn-remove-inline');
+          
+          const cardContainer = buttonEl.closest('.card-item');
+          cardContainer.classList.remove('holo-card');
+          const holoBtn = cardContainer.querySelector('.btn-holo');
+          if (holoBtn) {
+            holoBtn.classList.remove('is-active');
+            holoBtn.textContent = '+ Holo';
+          }
+        }
       } else {
-        collection[id] = { id, name, image, setName, type: type || '', qty: 1, isHolo: isHolo };
+        const item = { id, name, image, setName, type: type || '', qty: 1, isHolo: false };
+        db.ref(`user_data/collection/${id}`).set(item);
+
+        if (buttonEl) {
+          buttonEl.textContent = 'Remove';
+          buttonEl.classList.add('btn-remove-inline');
+        }
       }
-      saveData();
-      
-      if (buttonEl) {
-        buttonEl.textContent = `Add (${collection[id].qty})`;
+    }
+
+    function addToCollection(id, name, image, setName, type, buttonEl, isHolo = false) {
+      let item = collection[id];
+      if (item) {
+        const updatedQty = item.qty + 1;
+        const updatedHolo = isHolo || item.isHolo;
+        db.ref(`user_data/collection/${id}`).update({ qty: updatedQty, isHolo: updatedHolo });
+      } else {
+        item = { id, name, image, setName, type: type || '', qty: 1, isHolo: isHolo };
+        db.ref(`user_data/collection/${id}`).set(item);
       }
     }
 
     function toggleHoloInBrowse(id, name, image, setName, type, buttonEl) {
+      const currentHolo = collection[id] ? collection[id].isHolo : false;
+      const newHolo = !currentHolo;
+
       if (!collection[id]) {
-        collection[id] = { id, name, image, setName, type: type || '', qty: 1, isHolo: true };
+        const item = { id, name, image, setName, type: type || '', qty: 1, isHolo: true };
+        db.ref(`user_data/collection/${id}`).set(item);
       } else {
-        collection[id].isHolo = !collection[id].isHolo;
-        if (type) collection[id].type = type;
+        db.ref(`user_data/collection/${id}/isHolo`).set(newHolo);
       }
-      saveData();
-      
+
       const cardContainer = buttonEl.closest('.card-item');
-      let badgesContainer = cardContainer.querySelector('.badges-container');
-      
-      if (collection[id].isHolo) {
+      const addRemoveBtn = cardContainer.querySelector('.action-row .btn');
+
+      if (newHolo) {
         cardContainer.classList.add('holo-card');
         buttonEl.classList.add('is-active');
         buttonEl.textContent = '✨ Holo';
-        if (badgesContainer && !badgesContainer.querySelector('.badge-holo')) {
-          badgesContainer.innerHTML = '<span class="badge badge-holo">✨ Holo</span>';
-        }
       } else {
         cardContainer.classList.remove('holo-card');
         buttonEl.classList.remove('is-active');
         buttonEl.textContent = '+ Holo';
-        if (badgesContainer) badgesContainer.innerHTML = '';
       }
 
-      const addBtn = cardContainer.querySelector('.action-row .btn');
-      if (addBtn && collection[id]) {
-        addBtn.textContent = `Add (${collection[id].qty})`;
+      if (addRemoveBtn) {
+        addRemoveBtn.textContent = 'Remove';
+        addRemoveBtn.classList.add('btn-remove-inline');
       }
     }
 
     function toggleHolo(id) {
       if (collection[id]) {
-        collection[id].isHolo = !collection[id].isHolo;
-        saveData();
-        renderCollection();
+        const newHolo = !collection[id].isHolo;
+        db.ref(`user_data/collection/${id}/isHolo`).set(newHolo);
       }
     }
 
-    function removeFromCollection(id, buttonEl) {
+    function removeFromCollection(id) {
       if (collection[id]) {
-        delete collection[id];
-        saveData();
-        if (buttonEl) {
-          buttonEl.closest('.card-item').remove();
-        }
+        db.ref(`user_data/collection/${id}`).remove();
       }
     }
 
     function changeQuantity(id, delta) {
       if (collection[id]) {
-        collection[id].qty += delta;
-        if (collection[id].qty <= 0) {
-          delete collection[id];
+        const newQty = collection[id].qty + delta;
+        if (newQty <= 0) {
+          db.ref(`user_data/collection/${id}`).remove();
+        } else {
+          db.ref(`user_data/collection/${id}/qty`).set(newQty);
         }
-        saveData();
-        renderCollection();
       }
     }
 
     function renderCollection() {
       const grid = document.getElementById('collectionGrid');
       const status = document.getElementById('collectionStatus');
-      const cards = Object.values(collection);
+      const searchQuery = document.getElementById('collectionSearchInput').value.trim().toLowerCase();
+      const selectedSet = document.getElementById('collectionSetSelect').value;
+
+      let cards = Object.values(collection);
 
       if (cards.length === 0) {
         grid.innerHTML = '';
         status.style.display = 'block';
+        status.textContent = "You haven't added any cards yet my baby!";
+        return;
+      }
+
+      if (searchQuery) {
+        cards = cards.filter(c => (c.name || '').toLowerCase().includes(searchQuery));
+      }
+
+      if (selectedSet) {
+        cards = cards.filter(c => c.setName === selectedSet);
+      }
+
+      if (cards.length === 0) {
+        grid.innerHTML = '';
+        status.style.display = 'block';
+        status.textContent = "No cards in your collection match that search or set filter!";
         return;
       }
 
@@ -650,7 +799,7 @@
             <button class="btn btn-holo ${card.isHolo ? 'is-active' : ''}" onclick="toggleHolo('${card.id}')">
               ${card.isHolo ? '✨ Holo Card' : '⭐ Make Holo'}
             </button>
-            <button class="btn btn-remove" onclick="removeFromCollection('${card.id}', this)">Remove All</button>
+            <button class="btn btn-remove" onclick="removeFromCollection('${card.id}')">Remove All</button>
           </div>
         </div>
       `).join('');
@@ -658,45 +807,56 @@
 
     function toggleWishlist(id, name, image, setName, type, buttonEl) {
       if (wishlist[id]) {
-        delete wishlist[id];
+        db.ref(`user_data/wishlist/${id}`).remove();
         if (buttonEl) buttonEl.textContent = '☆ Add to Wishlist';
       } else {
-        wishlist[id] = { id, name, image, setName, type: type || '' };
+        const item = { id, name, image, setName, type: type || '' };
+        db.ref(`user_data/wishlist/${id}`).set(item);
         if (buttonEl) buttonEl.textContent = '★ On Wishlist';
       }
-      saveData();
     }
 
-    function removeFromWishlist(id, buttonEl) {
+    function removeFromWishlist(id) {
       if (wishlist[id]) {
-        delete wishlist[id];
-        saveData();
-        if (buttonEl) {
-          buttonEl.closest('.card-item').remove();
-        }
+        db.ref(`user_data/wishlist/${id}`).remove();
       }
     }
 
-    function moveToCollection(id, buttonEl, isHolo = false) {
+    function moveToCollection(id, isHolo = false) {
       const item = wishlist[id];
       if (item) {
         addToCollection(item.id, item.name, item.image, item.setName, item.type, null, isHolo);
-        delete wishlist[id];
-        saveData();
-        if (buttonEl) {
-          buttonEl.closest('.card-item').remove();
-        }
+        db.ref(`user_data/wishlist/${id}`).remove();
       }
     }
 
     function renderWishlist() {
       const grid = document.getElementById('wishlistGrid');
       const status = document.getElementById('wishlistStatus');
-      const cards = Object.values(wishlist);
+      const searchQuery = document.getElementById('wishlistSearchInput').value.trim().toLowerCase();
+      const selectedSet = document.getElementById('wishlistSetSelect').value;
+
+      let cards = Object.values(wishlist);
 
       if (cards.length === 0) {
         grid.innerHTML = '';
         status.style.display = 'block';
+        status.textContent = "You haven't wished for any cards yet my baby! Speaking of wishes I wish you were in my arms right now hehe";
+        return;
+      }
+
+      if (searchQuery) {
+        cards = cards.filter(c => (c.name || '').toLowerCase().includes(searchQuery));
+      }
+
+      if (selectedSet) {
+        cards = cards.filter(c => c.setName === selectedSet);
+      }
+
+      if (cards.length === 0) {
+        grid.innerHTML = '';
+        status.style.display = 'block';
+        status.textContent = "No cards in your wishlist match that search or set filter!";
         return;
       }
 
@@ -708,17 +868,17 @@
           <p>${card.setName}</p>
           <div class="card-actions">
             <div class="action-row">
-              <button class="btn" onclick="moveToCollection('${card.id}', this, false)">Add to Collection</button>
-              <button class="btn btn-holo" onclick="moveToCollection('${card.id}', this, true)">Add Holo</button>
+              <button class="btn" onclick="moveToCollection('${card.id}', false)">Add to Collection</button>
+              <button class="btn btn-holo" onclick="moveToCollection('${card.id}', true)">Add Holo</button>
             </div>
-            <button class="btn btn-remove" onclick="removeFromWishlist('${card.id}', this)">Remove</button>
+            <button class="btn btn-remove" onclick="removeFromWishlist('${card.id}')">Remove</button>
           </div>
         </div>
       `).join('');
     }
 
     function updateStats() {
-      const ownedTotal = Object.values(collection).reduce((acc, curr) => acc + curr.qty, 0);
+      const ownedTotal = Object.values(collection).reduce((acc, curr) => acc + (curr.qty || 0), 0);
       const wishlistTotal = Object.keys(wishlist).length;
 
       document.getElementById('ownedCount').textContent = ownedTotal;
