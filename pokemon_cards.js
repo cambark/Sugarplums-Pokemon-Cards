@@ -1,6 +1,10 @@
 window.POKEMON_CARD_DATA = {
   "sets": [
     {
+      "id": "DLR",
+      "name": "Delta Reign"
+    },
+    {
       "id": "30C",
       "name": "30th Celebration"
     },
@@ -618,6 +622,1557 @@ window.POKEMON_CARD_DATA = {
     }
   ],
   "cards": [
+    {
+      "id": "dlr-1",
+      "name": "Heracross",
+      "number": "1",
+      "set": "Delta Reign",
+      "type": "Grass",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_001_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-2",
+      "name": "Surskit",
+      "number": "2",
+      "set": "Delta Reign",
+      "type": "Grass",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_002_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-3",
+      "name": "Masquerain",
+      "number": "3",
+      "set": "Delta Reign",
+      "type": "Grass",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_003_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-4",
+      "name": "Cacnea",
+      "number": "4",
+      "set": "Delta Reign",
+      "type": "Grass",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_004_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-5",
+      "name": "Cacturne",
+      "number": "5",
+      "set": "Delta Reign",
+      "type": "Grass",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_005_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-6",
+      "name": "Combee",
+      "number": "6",
+      "set": "Delta Reign",
+      "type": "Grass",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_006_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-7",
+      "name": "Vespiquen",
+      "number": "7",
+      "set": "Delta Reign",
+      "type": "Grass",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_007_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-8",
+      "name": "Shaymin",
+      "number": "8",
+      "set": "Delta Reign",
+      "type": "Grass",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_008_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-9",
+      "name": "Virizion",
+      "number": "9",
+      "set": "Delta Reign",
+      "type": "Grass",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_009_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-10",
+      "name": "Wimpod",
+      "number": "10",
+      "set": "Delta Reign",
+      "type": "Grass",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_010_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-11",
+      "name": "Mega Golisopod ex",
+      "number": "11",
+      "set": "Delta Reign",
+      "type": "Grass",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_011_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-12",
+      "name": "Sprigatito",
+      "number": "12",
+      "set": "Delta Reign",
+      "type": "Grass",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_012_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-13",
+      "name": "Floragato",
+      "number": "13",
+      "set": "Delta Reign",
+      "type": "Grass",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_013_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-14",
+      "name": "Meowscarada ex",
+      "number": "14",
+      "set": "Delta Reign",
+      "type": "Grass",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_014_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-15",
+      "name": "Smoliv",
+      "number": "15",
+      "set": "Delta Reign",
+      "type": "Grass",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_015_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-16",
+      "name": "Dolliv",
+      "number": "16",
+      "set": "Delta Reign",
+      "type": "Grass",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_016_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-17",
+      "name": "Arboliva",
+      "number": "17",
+      "set": "Delta Reign",
+      "type": "Grass",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_017_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-18",
+      "name": "Growlithe",
+      "number": "18",
+      "set": "Delta Reign",
+      "type": "Fire",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_018_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-19",
+      "name": "Arcanine",
+      "number": "19",
+      "set": "Delta Reign",
+      "type": "Fire",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_019_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-20",
+      "name": "Magmar",
+      "number": "20",
+      "set": "Delta Reign",
+      "type": "Fire",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_020_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-21",
+      "name": "Magmortar",
+      "number": "21",
+      "set": "Delta Reign",
+      "type": "Fire",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_021_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-22",
+      "name": "Torkoal",
+      "number": "22",
+      "set": "Delta Reign",
+      "type": "Fire",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_022_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-23",
+      "name": "Heat Rotom ex",
+      "number": "23",
+      "set": "Delta Reign",
+      "type": "Fire",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_023_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-24",
+      "name": "Heatmor",
+      "number": "24",
+      "set": "Delta Reign",
+      "type": "Fire",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_024_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-25",
+      "name": "Mantine",
+      "number": "25",
+      "set": "Delta Reign",
+      "type": "Water",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_025_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-26",
+      "name": "Kyogre",
+      "number": "26",
+      "set": "Delta Reign",
+      "type": "Water",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_026_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-27",
+      "name": "Frillish",
+      "number": "27",
+      "set": "Delta Reign",
+      "type": "Water",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_027_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-28",
+      "name": "Jellicent",
+      "number": "28",
+      "set": "Delta Reign",
+      "type": "Water",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_028_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-29",
+      "name": "Wishiwashi ex",
+      "number": "29",
+      "set": "Delta Reign",
+      "type": "Water",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_029_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-30",
+      "name": "Electabuzz",
+      "number": "30",
+      "set": "Delta Reign",
+      "type": "Lightning",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_030_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-31",
+      "name": "Electivire",
+      "number": "31",
+      "set": "Delta Reign",
+      "type": "Lightning",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_031_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-32",
+      "name": "Jolteon",
+      "number": "32",
+      "set": "Delta Reign",
+      "type": "Lightning",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_032_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-33",
+      "name": "Raikou ex",
+      "number": "33",
+      "set": "Delta Reign",
+      "type": "Lightning",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_033_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-34",
+      "name": "Rotom",
+      "number": "34",
+      "set": "Delta Reign",
+      "type": "Lightning",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_034_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-35",
+      "name": "Thundurus",
+      "number": "35",
+      "set": "Delta Reign",
+      "type": "Lightning",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_035_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-36",
+      "name": "Pincurchin",
+      "number": "36",
+      "set": "Delta Reign",
+      "type": "Lightning",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_036_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-37",
+      "name": "Pawmi",
+      "number": "37",
+      "set": "Delta Reign",
+      "type": "Lightning",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_037_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-38",
+      "name": "Pawmo",
+      "number": "38",
+      "set": "Delta Reign",
+      "type": "Lightning",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_038_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-39",
+      "name": "Pawmot",
+      "number": "39",
+      "set": "Delta Reign",
+      "type": "Lightning",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_039_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-40",
+      "name": "Wattrel",
+      "number": "40",
+      "set": "Delta Reign",
+      "type": "Lightning",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_040_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-41",
+      "name": "Kilowattrel",
+      "number": "41",
+      "set": "Delta Reign",
+      "type": "Lightning",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_041_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-42",
+      "name": "Miraidon",
+      "number": "42",
+      "set": "Delta Reign",
+      "type": "Lightning",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_042_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-43",
+      "name": "Drowzee",
+      "number": "43",
+      "set": "Delta Reign",
+      "type": "Psychic",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_043_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-44",
+      "name": "Hypno",
+      "number": "44",
+      "set": "Delta Reign",
+      "type": "Psychic",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_044_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-45",
+      "name": "Giratina",
+      "number": "45",
+      "set": "Delta Reign",
+      "type": "Psychic",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_045_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-46",
+      "name": "Golett",
+      "number": "46",
+      "set": "Delta Reign",
+      "type": "Psychic",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_046_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-47",
+      "name": "Mega Golurk ex",
+      "number": "47",
+      "set": "Delta Reign",
+      "type": "Psychic",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_047_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-48",
+      "name": "Enamorus",
+      "number": "48",
+      "set": "Delta Reign",
+      "type": "Psychic",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_048_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-49",
+      "name": "Sandshrew",
+      "number": "49",
+      "set": "Delta Reign",
+      "type": "Fighting",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_049_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-50",
+      "name": "Sandslash",
+      "number": "50",
+      "set": "Delta Reign",
+      "type": "Fighting",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_050_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-51",
+      "name": "Onix",
+      "number": "51",
+      "set": "Delta Reign",
+      "type": "Fighting",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_051_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-52",
+      "name": "Steelix",
+      "number": "52",
+      "set": "Delta Reign",
+      "type": "Fighting",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_052_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-53",
+      "name": "Groudon",
+      "number": "53",
+      "set": "Delta Reign",
+      "type": "Fighting",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_053_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-54",
+      "name": "Landorus",
+      "number": "54",
+      "set": "Delta Reign",
+      "type": "Fighting",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_054_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-55",
+      "name": "Nidoran♀",
+      "number": "55",
+      "set": "Delta Reign",
+      "type": "Darkness",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_055_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-56",
+      "name": "Nidorina",
+      "number": "56",
+      "set": "Delta Reign",
+      "type": "Darkness",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_056_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-57",
+      "name": "Nidoqueen",
+      "number": "57",
+      "set": "Delta Reign",
+      "type": "Darkness",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_057_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-58",
+      "name": "Spinarak",
+      "number": "58",
+      "set": "Delta Reign",
+      "type": "Darkness",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_058_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-59",
+      "name": "Ariados",
+      "number": "59",
+      "set": "Delta Reign",
+      "type": "Darkness",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_059_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-60",
+      "name": "Sableye",
+      "number": "60",
+      "set": "Delta Reign",
+      "type": "Darkness",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_060_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-61",
+      "name": "Carvanha",
+      "number": "61",
+      "set": "Delta Reign",
+      "type": "Darkness",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_061_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-62",
+      "name": "Sharpedo",
+      "number": "62",
+      "set": "Delta Reign",
+      "type": "Darkness",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_062_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-63",
+      "name": "Darkrai",
+      "number": "63",
+      "set": "Delta Reign",
+      "type": "Darkness",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_063_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-64",
+      "name": "Purrloin",
+      "number": "64",
+      "set": "Delta Reign",
+      "type": "Darkness",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_064_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-65",
+      "name": "Liepard",
+      "number": "65",
+      "set": "Delta Reign",
+      "type": "Darkness",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_065_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-66",
+      "name": "Zorua",
+      "number": "66",
+      "set": "Delta Reign",
+      "type": "Darkness",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_066_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-67",
+      "name": "Zoroark ex",
+      "number": "67",
+      "set": "Delta Reign",
+      "type": "Darkness",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_067_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-68",
+      "name": "Inkay",
+      "number": "68",
+      "set": "Delta Reign",
+      "type": "Darkness",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_068_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-69",
+      "name": "Mega Malamar ex",
+      "number": "69",
+      "set": "Delta Reign",
+      "type": "Darkness",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_069_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-70",
+      "name": "Morpeko",
+      "number": "70",
+      "set": "Delta Reign",
+      "type": "Darkness",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_070_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-71",
+      "name": "Zarude",
+      "number": "71",
+      "set": "Delta Reign",
+      "type": "Darkness",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_071_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-72",
+      "name": "Druddigon",
+      "number": "72",
+      "set": "Delta Reign",
+      "type": "Dragon",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_072_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-73",
+      "name": "Jangmo-o",
+      "number": "73",
+      "set": "Delta Reign",
+      "type": "Dragon",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_073_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-74",
+      "name": "Hakamo-o",
+      "number": "74",
+      "set": "Delta Reign",
+      "type": "Dragon",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_074_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-75",
+      "name": "Kommo-o",
+      "number": "75",
+      "set": "Delta Reign",
+      "type": "Dragon",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_075_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-76",
+      "name": "Cyclizar",
+      "number": "76",
+      "set": "Delta Reign",
+      "type": "Dragon",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_076_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-77",
+      "name": "Tauros",
+      "number": "77",
+      "set": "Delta Reign",
+      "type": "Colorless",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_077_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-78",
+      "name": "Eevee",
+      "number": "78",
+      "set": "Delta Reign",
+      "type": "Colorless",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_078_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-79",
+      "name": "Delibird",
+      "number": "79",
+      "set": "Delta Reign",
+      "type": "Colorless",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_079_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-80",
+      "name": "Azurill",
+      "number": "80",
+      "set": "Delta Reign",
+      "type": "Colorless",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_080_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-81",
+      "name": "Swablu",
+      "number": "81",
+      "set": "Delta Reign",
+      "type": "Colorless",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_081_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-82",
+      "name": "Altaria",
+      "number": "82",
+      "set": "Delta Reign",
+      "type": "Colorless",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_082_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-83",
+      "name": "Kecleon",
+      "number": "83",
+      "set": "Delta Reign",
+      "type": "Colorless",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_083_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-84",
+      "name": "Mega Rayquaza ex",
+      "number": "84",
+      "set": "Delta Reign",
+      "type": "Colorless",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_084_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-85",
+      "name": "Tornadus",
+      "number": "85",
+      "set": "Delta Reign",
+      "type": "Colorless",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_085_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-86",
+      "name": "Fletchling",
+      "number": "86",
+      "set": "Delta Reign",
+      "type": "Colorless",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_086_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-87",
+      "name": "Fletchinder",
+      "number": "87",
+      "set": "Delta Reign",
+      "type": "Colorless",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_087_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-88",
+      "name": "Talonflame ex",
+      "number": "88",
+      "set": "Delta Reign",
+      "type": "Colorless",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_088_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-89",
+      "name": "Aarune",
+      "number": "89",
+      "set": "Delta Reign",
+      "type": "Supporter",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_089_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-90",
+      "name": "Adventure Lantern",
+      "number": "90",
+      "set": "Delta Reign",
+      "type": "Item",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_090_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-91",
+      "name": "Custom Vest",
+      "number": "91",
+      "set": "Delta Reign",
+      "type": "Tool",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_091_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-92",
+      "name": "Emcee's Hype",
+      "number": "92",
+      "set": "Delta Reign",
+      "type": "Supporter",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_092_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-93",
+      "name": "Grisham",
+      "number": "93",
+      "set": "Delta Reign",
+      "type": "Supporter",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_093_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-94",
+      "name": "Legendary Pyroduct",
+      "number": "94",
+      "set": "Delta Reign",
+      "type": "Stadium",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_094_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-95",
+      "name": "Legendary Pyroduct",
+      "number": "95",
+      "set": "Delta Reign",
+      "type": "Stadium",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_095_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-96",
+      "name": "Legendary Summit",
+      "number": "96",
+      "set": "Delta Reign",
+      "type": "Stadium",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_096_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-97",
+      "name": "Legendary Summit",
+      "number": "97",
+      "set": "Delta Reign",
+      "type": "Stadium",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_097_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-98",
+      "name": "Legendary Trench",
+      "number": "98",
+      "set": "Delta Reign",
+      "type": "Stadium",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_098_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-99",
+      "name": "Legendary Trench",
+      "number": "99",
+      "set": "Delta Reign",
+      "type": "Stadium",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_099_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-100",
+      "name": "Mega Rayquaza Cap",
+      "number": "100",
+      "set": "Delta Reign",
+      "type": "Tool",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_100_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-101",
+      "name": "Tasty Rice Ball",
+      "number": "101",
+      "set": "Delta Reign",
+      "type": "Item",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_101_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-102",
+      "name": "Tate & Liza's Training",
+      "number": "102",
+      "set": "Delta Reign",
+      "type": "Supporter",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_102_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-103",
+      "name": "Zinnia's Trust",
+      "number": "103",
+      "set": "Delta Reign",
+      "type": "Supporter",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_103_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-104",
+      "name": "Masquerain",
+      "number": "104",
+      "set": "Delta Reign",
+      "type": "Grass",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_104_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-105",
+      "name": "Sprigatito",
+      "number": "105",
+      "set": "Delta Reign",
+      "type": "Grass",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_105_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-106",
+      "name": "Growlithe",
+      "number": "106",
+      "set": "Delta Reign",
+      "type": "Fire",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_106_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-107",
+      "name": "Magmortar",
+      "number": "107",
+      "set": "Delta Reign",
+      "type": "Fire",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_107_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-108",
+      "name": "Electivire",
+      "number": "108",
+      "set": "Delta Reign",
+      "type": "Lightning",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_108_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-109",
+      "name": "Pincurchin",
+      "number": "109",
+      "set": "Delta Reign",
+      "type": "Lightning",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_109_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-110",
+      "name": "Enamorus",
+      "number": "110",
+      "set": "Delta Reign",
+      "type": "Psychic",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_110_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-111",
+      "name": "Groudon",
+      "number": "111",
+      "set": "Delta Reign",
+      "type": "Fighting",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_111_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-112",
+      "name": "Zorua",
+      "number": "112",
+      "set": "Delta Reign",
+      "type": "Darkness",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_112_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-113",
+      "name": "Inkay",
+      "number": "113",
+      "set": "Delta Reign",
+      "type": "Darkness",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_113_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-114",
+      "name": "Eevee",
+      "number": "114",
+      "set": "Delta Reign",
+      "type": "Colorless",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_114_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-115",
+      "name": "Azurill",
+      "number": "115",
+      "set": "Delta Reign",
+      "type": "Colorless",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_115_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-116",
+      "name": "Altaria",
+      "number": "116",
+      "set": "Delta Reign",
+      "type": "Colorless",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_116_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-117",
+      "name": "Kecleon",
+      "number": "117",
+      "set": "Delta Reign",
+      "type": "Colorless",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_117_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-118",
+      "name": "Mega Golisopod ex",
+      "number": "118",
+      "set": "Delta Reign",
+      "type": "Grass",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_118_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-119",
+      "name": "Heat Rotom ex",
+      "number": "119",
+      "set": "Delta Reign",
+      "type": "Fire",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_119_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-120",
+      "name": "Wishiwashi ex",
+      "number": "120",
+      "set": "Delta Reign",
+      "type": "Water",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_120_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-121",
+      "name": "Raikou ex",
+      "number": "121",
+      "set": "Delta Reign",
+      "type": "Lightning",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_121_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-122",
+      "name": "Mega Golurk ex",
+      "number": "122",
+      "set": "Delta Reign",
+      "type": "Psychic",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_122_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-123",
+      "name": "Mega Malamar ex",
+      "number": "123",
+      "set": "Delta Reign",
+      "type": "Darkness",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_123_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-124",
+      "name": "Talonflame ex",
+      "number": "124",
+      "set": "Delta Reign",
+      "type": "Colorless",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_124_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-125",
+      "name": "Aarune",
+      "number": "125",
+      "set": "Delta Reign",
+      "type": "Supporter",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_125_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-126",
+      "name": "Adventure Lantern",
+      "number": "126",
+      "set": "Delta Reign",
+      "type": "Item",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_126_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-127",
+      "name": "Custom Vest",
+      "number": "127",
+      "set": "Delta Reign",
+      "type": "Tool",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_127_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-128",
+      "name": "Emcee's Hype",
+      "number": "128",
+      "set": "Delta Reign",
+      "type": "Supporter",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_128_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-129",
+      "name": "Pokémon Catcher",
+      "number": "129",
+      "set": "Delta Reign",
+      "type": "Item",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_129_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-130",
+      "name": "Tate & Liza's Training",
+      "number": "130",
+      "set": "Delta Reign",
+      "type": "Supporter",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_130_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-131",
+      "name": "Zinnia's Trust",
+      "number": "131",
+      "set": "Delta Reign",
+      "type": "Supporter",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_131_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-132",
+      "name": "Bubbly Water Energy",
+      "number": "132",
+      "set": "Delta Reign",
+      "type": "Energy",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_132_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-133",
+      "name": "Growing Grass Energy",
+      "number": "133",
+      "set": "Delta Reign",
+      "type": "Energy",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_133_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-134",
+      "name": "Nitro Fire Energy",
+      "number": "134",
+      "set": "Delta Reign",
+      "type": "Energy",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_134_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-135",
+      "name": "Mega Golisopod ex",
+      "number": "135",
+      "set": "Delta Reign",
+      "type": "Grass",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_135_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-136",
+      "name": "Raikou ex",
+      "number": "136",
+      "set": "Delta Reign",
+      "type": "Lightning",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_136_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-137",
+      "name": "Mega Golurk ex",
+      "number": "137",
+      "set": "Delta Reign",
+      "type": "Psychic",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_137_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-138",
+      "name": "Mega Rayquaza ex",
+      "number": "138",
+      "set": "Delta Reign",
+      "type": "Colorless",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_138_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-139",
+      "name": "Aarune",
+      "number": "139",
+      "set": "Delta Reign",
+      "type": "Supporter",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_139_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-140",
+      "name": "Zinnia's Trust",
+      "number": "140",
+      "set": "Delta Reign",
+      "type": "Supporter",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_140_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "dlr-141",
+      "name": "Mega Rayquaza ex",
+      "number": "141",
+      "set": "Delta Reign",
+      "type": "Colorless",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/DLR/DLR_141_R_EN_LG.png"
+      }
+    },
     {
       "id": "30c-1",
       "name": "Exeggcute",
@@ -14762,6 +16317,193 @@ window.POKEMON_CARD_DATA = {
       "isFullArt": false,
       "images": {
         "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/MEP/MEP_101_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "mep-102",
+      "name": "Victini",
+      "number": "102",
+      "set": "Mega Promos",
+      "type": "Fire",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/MEP/MEP_102_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "mep-103",
+      "name": "Zeraora",
+      "number": "103",
+      "set": "Mega Promos",
+      "type": "Lightning",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/MEP/MEP_103_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "mep-104",
+      "name": "Mewtwo",
+      "number": "104",
+      "set": "Mega Promos",
+      "type": "Psychic",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/MEP/MEP_104_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "mep-105",
+      "name": "Mew",
+      "number": "105",
+      "set": "Mega Promos",
+      "type": "Psychic",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/MEP/MEP_105_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "mep-106",
+      "name": "Ditto",
+      "number": "106",
+      "set": "Mega Promos",
+      "type": "Colorless",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/MEP/MEP_106_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "mep-107",
+      "name": "Pikachu ex",
+      "number": "107",
+      "set": "Mega Promos",
+      "type": "Lightning",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/MEP/MEP_107_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "mep-108",
+      "name": "Espeon ex",
+      "number": "108",
+      "set": "Mega Promos",
+      "type": "Psychic",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/MEP/MEP_108_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "mep-109",
+      "name": "Pikachu ex",
+      "number": "109",
+      "set": "Mega Promos",
+      "type": "Lightning",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/MEP/MEP_109_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "mep-110",
+      "name": "Umbreon ex",
+      "number": "110",
+      "set": "Mega Promos",
+      "type": "Darkness",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/MEP/MEP_110_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "mep-111",
+      "name": "Masquerain",
+      "number": "111",
+      "set": "Mega Promos",
+      "type": "Grass",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/MEP/MEP_111_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "mep-112",
+      "name": "Magmortar",
+      "number": "112",
+      "set": "Mega Promos",
+      "type": "Fire",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/MEP/MEP_112_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "mep-113",
+      "name": "Enamorus",
+      "number": "113",
+      "set": "Mega Promos",
+      "type": "Psychic",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/MEP/MEP_113_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "mep-114",
+      "name": "Kommo-o",
+      "number": "114",
+      "set": "Mega Promos",
+      "type": "Dragon",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/MEP/MEP_114_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "mep-115",
+      "name": "Spritzee",
+      "number": "115",
+      "set": "Mega Promos",
+      "type": "Psychic",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/MEP/MEP_115_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "mep-116",
+      "name": "Seel",
+      "number": "116",
+      "set": "Mega Promos",
+      "type": "Water",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/MEP/MEP_116_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "mep-117",
+      "name": "Kyogre",
+      "number": "117",
+      "set": "Mega Promos",
+      "type": "Water",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/MEP/MEP_117_R_EN_LG.png"
+      }
+    },
+    {
+      "id": "mep-120",
+      "name": "Celebratory Fanfare",
+      "number": "120",
+      "set": "Mega Promos",
+      "type": "Stadium",
+      "isFullArt": false,
+      "images": {
+        "small": "https://limitlesstcg.nyc3.cdn.digitaloceanspaces.com/tpci/MEP/MEP_120_R_EN_LG.png"
       }
     },
     {
